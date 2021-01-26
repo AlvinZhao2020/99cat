@@ -1,0 +1,20 @@
+<h1>Add cat</h1>
+
+<form action="/cats" method="post">
+    <label> name:<input type="text" name='cat[name]'></label>
+    <label> color: <select name="" id="" name='cat[color]'>
+                    <option value="WITHE">WHITE</option>
+                    <option value="Black">BLACK</option>
+                    <option value="ORANGE">ORANGE</option>
+                    <option value="BROWN">BROWN</option>
+                   </select>
+    </label>
+    <label>gender:
+        <input type="radio" name='cat[sex]' value='M'>M 
+        <input type="radio" name='cat[sex]' value='F'>F
+    </label>
+    <p>description:
+    <textarea name='cat[description]'></textarea>
+    </p>
+    <input type="submit" value ='add a new cat'>
+</form>
