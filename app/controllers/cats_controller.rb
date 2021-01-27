@@ -29,7 +29,13 @@ class CatsController < ApplicationController
         render :new
     end
 
+    def edit
+        @cat = Cat.find_by(id:params[:id])
+        render :edit
+    end
+
     def updated
+       
     end
 
     def destroy
@@ -43,6 +49,6 @@ class CatsController < ApplicationController
     private
 
     def cat_params
-        params.require(:cat).permit(:color,:sex,:name)
+        params.require(:cat).permit(:color,:sex,:name,:birth_date,:description)
     end
 end
