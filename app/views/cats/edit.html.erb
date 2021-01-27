@@ -1,6 +1,7 @@
 <h1>edit a cat</h1>
 
-<form action="cats/:id" method="patch">
+<form action= '<%= cat_url(@cat) %>' method="post">
+    <input type="hidden" name="_method" value="PATCH">
     <label> name:<input type="text" name='cat[name]' value='<%= @cat.name %>'></label>
     <br/>
     <label> color: <select name='cat[color]' >
@@ -27,5 +28,5 @@
     <p>description:
     <textarea name='cat[description]'><%= @cat.description %></textarea>
     </p>
-    <input type="submit" value ='update dog info'>
+    <input type="submit" value ='update cat info'>
 </form>
