@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_201244) do
+ActiveRecord::Schema.define(version: 2021_01_28_214325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cat_rental_requests", force: :cascade do |t|
+    t.integer "cat_id", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.string "status", default: "pending", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cat_id"], name: "index_cat_rental_requests_on_cat_id"
+  end
 
   create_table "cats", force: :cascade do |t|
     t.date "birth_date", null: false
